@@ -1,3 +1,7 @@
 name: BlockTracker
 main: me.blha303.BlockTracker
-version: 1
+version: 1.1
+permissions:
+  blockbreak.record:
+    description: Adds info about user to every broken block
+    default: true
