@@ -16,6 +16,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class BlockTracker extends JavaPlugin implements Listener {
 
+	// Cheers to einand and hdon ;)
+	
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
 	}
@@ -26,7 +28,7 @@ public class BlockTracker extends JavaPlugin implements Listener {
 			return;
 		}
 		event.setCancelled(true);
-		Collection<ItemStack> drops = event.getBlock().getDrops();
+		Collection<ItemStack> drops = event.getBlock().getDrops(event.getPlayer().getItemInHand());
 		Location loc = event.getBlock().getLocation();
 		List<String> newlore = new ArrayList<String>();
 		newlore.add("Broken by: " + event.getPlayer().getName());
